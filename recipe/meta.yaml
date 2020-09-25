@@ -1,21 +1,18 @@
 {% set name = "iprpy" %}
-{% set version = "0.9.1" %}
+{% set version = "0.10.3" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/usnistgov/iprPy/archive/95ab94f78826fa3bc94faf2b10dc01477afea762.tar.gz
-  sha256: bd21c51cfd54f366113cf5247f8d2a387262db0a0c98e672233335b52a6f1ca9
-  patches:
-    - iprpydata.patch
-    - python3.patch
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: a81ff32fab5987d3e9b5a35f878c79d8f742158a28387820a87411e6191a5e56
 
 build:
-  noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
+  skip: true  # [py<37]
 
 requirements:
   build:
@@ -24,38 +21,48 @@ requirements:
     - pip
   run:
     - python
+    - pip
     - xmltodict
     - datamodeldict
-    - numpy
+    - numpy >=1.15
     - matplotlib-base
     - scipy
     - pandas
+    - cython
     - numericalunits
-    - atomman >=1.2.0
+    - toolz
+    - potentials
+    - atomman
     - requests
-    - iprpy-data
 
 test:
   imports:
     - iprPy
+  commands:
+    - pip check
 
 about:
-  home: https://github.com/usnistgov/iprPy
+  home: https://www.ctcms.nist.gov/potentials/iprPy/
   license: OTHER
   license_family: OTHER
   license_file: LICENSE.TXT
   summary: 'NIST Interatomic Potential Repository property calculation tools'
 
   description: |
-    The iprPy framework is a collection of tools and resources supporting 
-    the design of scientific calculations that are open source with minimum 
-    barriers for usage, have transparent methodologies supporting knowledge 
-    transfer and education, produce results that are both human and machine 
-    readable, allow investigations into method and parameter sensitivity, 
-    and can be integrated into workflows
+    The iprPy framework is a collection of tools and resources supporting the
+    design of scientific calculations that are open source with minimum
+    barriers for usage, have transparent methodologies supporting knowledge
+    transfer and education, produce results that are both human and machine
+    readable, allow investigations into method and parameter sensitivity, and
+    can be integrated into workflows. The framework was originally created to
+    support the NIST Interatomic Potential Repository by evaluating basic
+    materials properties across multiple classical interatomic potentials.
+    Because of this, many of the included calculations and tools are designed
+    towards molecular dynamics simulations.
   doc_url: https://www.ctcms.nist.gov/potentials/iprPy/
   dev_url: https://github.com/usnistgov/iprPy
 
 extra:
   recipe-maintainers:
     - jan-janssen
+    - lmhale99
