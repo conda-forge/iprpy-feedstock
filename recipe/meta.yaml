@@ -12,18 +12,19 @@ source:
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . -vv
-
+  skip: true # [py<=37]
+  
 requirements:
   build:
   host:
-    - python >=3.7
+    - python
     - pip
   run:
-    - python >=3.7
+    - python
     - pip
     - datamodeldict
     - numpy >=1.15
-    - matplotlib
+    - matplotlib-base
     - scipy
     - pandas
     - atomman =1.4.4
