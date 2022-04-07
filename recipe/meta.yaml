@@ -1,5 +1,5 @@
 {% set name = "iprPy" %}
-{% set version = "0.10.3" %}
+{% set version = "0.11.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,32 +7,26 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: a81ff32fab5987d3e9b5a35f878c79d8f742158a28387820a87411e6191a5e56
+  sha256: c8b7a78c5dd64c76349d3cdf64120925eda313ef68d4fe0615c9b375846b475a
 
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . -vv
-  skip: true  # [py<37]
 
 requirements:
   build:
   host:
-    - python
+    - python >=3.7
     - pip
   run:
-    - python
+    - python >=3.7
     - pip
-    - xmltodict
     - datamodeldict
     - numpy >=1.15
-    - matplotlib-base
+    - matplotlib
     - scipy
     - pandas
-    - cython
-    - numericalunits
-    - toolz
-    - potentials
-    - atomman
+    - atomman =1.4.4
     - requests
 
 test:
@@ -43,8 +37,7 @@ test:
 
 about:
   home: https://www.ctcms.nist.gov/potentials/iprPy/
-  license: OTHER
-  license_family: OTHER
+  license: NIST-PD
   license_file: LICENSE.TXT
   summary: 'NIST Interatomic Potential Repository property calculation tools'
 
