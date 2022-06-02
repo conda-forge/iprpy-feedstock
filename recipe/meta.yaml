@@ -1,5 +1,5 @@
 {% set name = "iprPy" %}
-{% set version = "0.11.2" %}
+{% set version = "0.11.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: c8b7a78c5dd64c76349d3cdf64120925eda313ef68d4fe0615c9b375846b475a
+  sha256: 9047fdd5461769924c737e1b28b4d24ebfd1d37495d38cb15a8ae4baee0e70a8
 
 build:
   number: 0
@@ -15,7 +15,7 @@ build:
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - iprPy = iprPy.command_line:command_line
-  
+
 requirements:
   build:
   host:
@@ -42,7 +42,7 @@ about:
   home: https://www.ctcms.nist.gov/potentials/iprPy/
   license: NIST-PD
   license_file: LICENSE.TXT
-  summary: 'NIST Interatomic Potential Repository property calculation tools'
+  summary: NIST Interatomic Potential Repository property calculation tools
 
   description: |
     The iprPy framework is a collection of tools and resources supporting the
