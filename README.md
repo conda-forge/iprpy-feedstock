@@ -5,7 +5,7 @@ Home: https://www.ctcms.nist.gov/potentials/iprPy/
 
 Package license: NIST-PD
 
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/iprpy-feedstock/blob/master/LICENSE.txt)
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/iprpy-feedstock/blob/main/LICENSE.txt)
 
 Summary: NIST Interatomic Potential Repository property calculation tools
 
@@ -31,8 +31,8 @@ Current build status
 
 <table><tr><td>All platforms:</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10007&branchName=master">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/iprpy-feedstock?branchName=master">
+      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10007&branchName=main">
+        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/iprpy-feedstock?branchName=main">
       </a>
     </td>
   </tr>
