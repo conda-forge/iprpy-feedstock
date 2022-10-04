@@ -31,6 +31,7 @@ requirements:
     - pandas
     - atomman =1.4.5
     - requests
+    - bokeh
 
 test:
   imports:
