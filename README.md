@@ -1,11 +1,11 @@
-About iprpy
-===========
+About iprpy-feedstock
+=====================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/iprpy-feedstock/blob/main/LICENSE.txt)
 
 Home: https://www.ctcms.nist.gov/potentials/iprPy/
 
 Package license: NIST-PD
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/iprpy-feedstock/blob/main/LICENSE.txt)
 
 Summary: NIST Interatomic Potential Repository property calculation tools
 
