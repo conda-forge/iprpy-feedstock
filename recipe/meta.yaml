@@ -32,7 +32,7 @@ requirements:
     - atomman =1.4.9
     - requests
     - bokeh
-    - kaleido
+    - python-kaleido
 
 test:
   imports:
