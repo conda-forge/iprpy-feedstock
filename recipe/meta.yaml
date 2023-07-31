@@ -29,7 +29,7 @@ requirements:
     - matplotlib-base
     - scipy
     - pandas
-    - atomman =1.4.9
+    - atomman >=1.4.10
     - requests
     - bokeh
     - python-kaleido
