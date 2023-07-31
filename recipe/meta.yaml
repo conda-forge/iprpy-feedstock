@@ -1,5 +1,5 @@
 {% set name = "iprPy" %}
-{% set version = "0.11.5" %}
+{% set version = "0.11.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 3804bfcd7aae206beebbeb7bf79431321d63448d3ceae9ffb3683864b94bb219
+  sha256: 5e01d41f86100e710de2cd2e7b5f548707ee5c551b519d4bdc2cef4aba69f59a
 
 build:
   number: 0
@@ -29,7 +29,7 @@ requirements:
     - matplotlib-base
     - scipy
     - pandas
-    - atomman =1.4.9
+    - atomman >=1.4.10
     - requests
     - bokeh
     - python-kaleido
