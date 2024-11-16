@@ -1,13 +1,13 @@
 {% set name = "iprPy" %}
-{% set version = "0.11.6" %}
+{% set version = "0.11.7" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 5e01d41f86100e710de2cd2e7b5f548707ee5c551b519d4bdc2cef4aba69f59a
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name|lower }}/{{ name|lower }}-{{ version }}.tar.gz
+  sha256: 134ac17635ee0db8b3f356b4309695e94b4e57f178c2a986ccb0cf2b8cf0463b
 
 build:
   number: 0
@@ -21,6 +21,7 @@ requirements:
   host:
     - python >=3.7
     - pip
+    - setuptools
   run:
     - python >=3.7
     - pip
