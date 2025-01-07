@@ -10,7 +10,7 @@ source:
   sha256: 134ac17635ee0db8b3f356b4309695e94b4e57f178c2a986ccb0cf2b8cf0463b
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
@@ -19,11 +19,11 @@ build:
 requirements:
   build:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
     - setuptools
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - pip
     - datamodeldict
     - numpy >=1.15
@@ -36,6 +36,8 @@ requirements:
     - python-kaleido
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - iprPy
   commands:
