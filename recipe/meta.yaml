@@ -1,5 +1,5 @@
 {% set name = "iprPy" %}
-{% set version = "0.11.7" %}
+{% set version = "0.11.8" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name|lower }}/{{ name|lower }}-{{ version }}.tar.gz
-  sha256: 134ac17635ee0db8b3f356b4309695e94b4e57f178c2a986ccb0cf2b8cf0463b
+  sha256: 9ce2160dc2c5a5f5381ad6c7301f29800241fee4544d4fca8cff186104f59c01
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
