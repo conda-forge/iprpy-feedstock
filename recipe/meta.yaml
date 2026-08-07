@@ -21,7 +21,7 @@ requirements:
   host:
     - python {{ python_min }}
     - pip
-    - setuptools
+    - uv-build
   run:
     - python >={{ python_min }}
     - pip
@@ -45,7 +45,7 @@ test:
 
 about:
   home: https://www.ctcms.nist.gov/potentials/iprPy/
-  license: NIST-PD
+  license: NIST-Software
   license_file: LICENSE.TXT
   summary: NIST Interatomic Potential Repository property calculation tools
 
