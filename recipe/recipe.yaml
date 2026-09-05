@@ -1,29 +1,33 @@
-{% set name = "iprPy" %}
-{% set version = "0.12.0" %}
+schema_version: 1
+
+context:
+  name: iprPy
+  version: "0.12.0"
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: ${{ name|lower }}
+  version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name|lower }}/{{ name|lower }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name|lower }}/${{ name|lower }}-${{ version }}.tar.gz
   sha256: 8ba8449564504d82a2c185fc7e65450376328323f7465980f879f87c2bcf2276
 
 build:
-  number: 0
+  number: 1
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
-  entry_points:
-    - iprPy = iprPy.command_line:command_line
+  script: ${{ PYTHON }} -m pip install . -vv
+  python:
+    entry_points:
+      - iprPy = iprPy.command_line:command_line
 
 requirements:
   build:
   host:
-    - python {{ python_min }}
+    - python ${{ python_min }}.*
     - pip
     - uv-build
   run:
-    - python >={{ python_min }}
+    - python >=${{ python_min }}
     - pip
     - datamodeldict
     - numpy >=1.15
@@ -35,20 +39,17 @@ requirements:
     - bokeh
     - python-kaleido
 
-test:
-  requires:
-    - python {{ python_min }}
-  imports:
-    - iprPy
-  commands:
-    - pip check
+tests:
+  - python:
+      imports:
+        - iprPy
+      pip_check: true
+      python_version: ${{ python_min }}
 
 about:
-  home: https://www.ctcms.nist.gov/potentials/iprPy/
   license: NIST-Software
   license_file: LICENSE.TXT
   summary: NIST Interatomic Potential Repository property calculation tools
-
   description: |
     The iprPy framework is a collection of tools and resources supporting the
     design of scientific calculations that are open source with minimum
@@ -60,8 +61,9 @@ about:
     materials properties across multiple classical interatomic potentials.
     Because of this, many of the included calculations and tools are designed
     towards molecular dynamics simulations.
-  doc_url: https://www.ctcms.nist.gov/potentials/iprPy/
-  dev_url: https://github.com/usnistgov/iprPy
+  homepage: https://www.ctcms.nist.gov/potentials/iprPy/
+  repository: https://github.com/usnistgov/iprPy
+  documentation: https://www.ctcms.nist.gov/potentials/iprPy/
 
 extra:
   recipe-maintainers:
