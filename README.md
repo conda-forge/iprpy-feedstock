@@ -5,7 +5,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/iprpy-feedstock
 
 Home: https://www.ctcms.nist.gov/potentials/iprPy/
 
-Package license: NIST-PD
+Package license: NIST-Software
 
 Summary: NIST Interatomic Potential Repository property calculation tools
 
@@ -23,7 +23,6 @@ support the NIST Interatomic Potential Repository by evaluating basic
 materials properties across multiple classical interatomic potentials.
 Because of this, many of the included calculations and tools are designed
 towards molecular dynamics simulations.
-
 
 Current build status
 ====================
